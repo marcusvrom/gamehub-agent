@@ -1,3 +1,4 @@
+require('update-electron-app')();
 const { app, BrowserWindow, ipcMain, screen, globalShortcut, dialog } = require('electron');
 const path = require('path');
 const { exec } = require('child_process');
@@ -66,7 +67,7 @@ function createLoginWindow() {
     // Se não, vai para a nova tela de setup
     loginWindow.loadFile('setup.html');
   }
-  loginWindow.webContents.openDevTools();
+  // loginWindow.webContents.openDevTools();
 
   // Aplica as regras de segurança assim que a janela estiver pronta
   loginWindow.once('ready-to-show', () => {
