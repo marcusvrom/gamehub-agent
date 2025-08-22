@@ -1,4 +1,4 @@
-require('update-electron-app')();
+require('update-electron-app');
 const { app, BrowserWindow, ipcMain, screen, globalShortcut, dialog } = require('electron');
 const path = require('path');
 const { exec } = require('child_process');
