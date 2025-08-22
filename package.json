@@ -9,6 +9,7 @@
   },
   "keywords": [],
   "author": "Game Hub",
+  "repository": "https://github.com/marcusvrom/gamehub-agent",
   "license": "ISC",
   "description": "Agente de controle para as estações do Game Hub",
   "dependencies": {
@@ -26,5 +27,30 @@
     "@electron-forge/plugin-fuses": "^7.8.3",
     "@electron/fuses": "^1.8.0",
     "electron": "^37.3.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "rebuildConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "marcusvrom",
+              "name": "gamehub-agent"
+            },
+            "prerelease": false,
+            "draft": true
+          }
+        }
+      ]
+    }
   }
 }
